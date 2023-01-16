@@ -24,4 +24,9 @@ public class TecallianceUtils {
 	public String getPageSource() {
 		return driver.getPageSource();
 	}
+	
+	public void navigateTo(String url) {
+		driver.get(url);
+		logger.info("    Navigate to url: " + url);
+	}
 }

@@ -79,16 +79,14 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/${testSuite}.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<properties>
-						<property>
-							<name>listener</name>
-							<value>org.uncommons.reportng.HTMLReporter,
-								org.uncommons.reportng.JUnitXMLReporter</value>
-						</property>
-					</properties>
 					<workingDirectory>target/</workingDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
+		<testResources>
+        <testResource>
+            <directory>src/test/resources/stories</directory>
+        </testResource>
+    </testResources>
 	</build>
 </project>

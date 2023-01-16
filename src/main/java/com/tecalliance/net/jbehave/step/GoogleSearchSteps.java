@@ -11,19 +11,19 @@ import com.tecalliance.net.utils.Assertions;
 import com.tecalliance.net.utils.TecallianceUtils;
 
 public class GoogleSearchSteps extends Assertions {
-	private WebDriver driver;
 	private GoogleHome googleHome;
 	private TecallianceUtils tecallianceUtils;
 	
+	private static final String GOOGLE_URL = "https://www.google.com.vn/?hl=en";
+	
 	public GoogleSearchSteps(WebDriver driver, WebDriverWait wait) {
-		this.driver = driver;
 		googleHome = new GoogleHome(wait);
 		tecallianceUtils = new TecallianceUtils(driver);
 	}
 	
 	@Given("I go to Google page")
 	public void navigateToGoogle() {
-		driver.get("https://www.google.com.vn/?hl=en");
+		tecallianceUtils.navigateTo(GOOGLE_URL);
 	}
 	
 	@When("I search keyword $keyword")
